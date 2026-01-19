@@ -1,11 +1,10 @@
-import { format, isAfter, isBefore, isToday, parseISO } from 'date-fns';
-import { zhCN } from 'date-fns/locale';
+import { format, isBefore, isToday } from 'date-fns';
 
 /**
  * 格式化日期为中文显示
  */
 export function formatDate(timestamp: number): string {
-  return format(timestamp, 'yyyy年MM月dd日', { locale: zhCN });
+  return format(timestamp, 'yyyy年MM月dd日');
 }
 
 /**
