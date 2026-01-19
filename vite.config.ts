@@ -11,7 +11,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild', // 使用 esbuild 更快
+    target: 'esnext',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -20,7 +21,8 @@ export default defineConfig({
           'utils-vendor': ['date-fns', 'clsx', 'tailwind-merge', 'uuid']
         }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000
   }
 })
 
